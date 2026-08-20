@@ -21,4 +21,5 @@ wait_time = 0.33
 one_shot = true
 
 [node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="." unique_id=2083576035]
-event_guid = "{0000005f-006e-0000-6f00-000064000000}"
+event_name = "event:/Shooting"
+event_guid = "{c4bf9bf8-ed97-4e68-a243-d1743bb8ee35}"

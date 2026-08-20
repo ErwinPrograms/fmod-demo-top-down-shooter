@@ -10,7 +10,7 @@ config_version=5
 
 [Fmod]
 
-General/banks_path="res://assets/banks"
+General/banks_path="res://assets/banks/Desktop"
 
 [application]
 

@@ -7,7 +7,7 @@
 y_sort_enabled = true
 
 [node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=480171807]
-bank_paths = ["res://assets/banks/Master.bank", "res://assets/banks/Master.strings.bank"]
+bank_paths = ["res://assets/banks/Desktop/Master.strings.bank", "res://assets/banks/Desktop/Master.bank"]
 
 [node name="PlayerCharacter" parent="." unique_id=1932238009 instance=ExtResource("1_u11kh")]
 position = Vector2(150, 79)
