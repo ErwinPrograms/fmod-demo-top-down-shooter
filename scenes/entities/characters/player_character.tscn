@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://cwik15sd66qdm"]
+
+[ext_resource type="Texture2D" uid="uid://dt1eibe5j1o4q" path="res://assets/sprites/entities/player_tilemap_packed.png" id="1_bhjyr"]
+[ext_resource type="Script" uid="uid://bwq8ddnfg2f7" path="res://scenes/entities/characters/player_character.gd" id="1_w5kve"]
+[ext_resource type="PackedScene" uid="uid://dmubfa0sxugxn" path="res://scenes/entities/rifle_weapon.tscn" id="3_pjcwr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhjyr"]
+atlas = ExtResource("1_bhjyr")
+region = Rect2(72, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xv5ed"]
+atlas = ExtResource("1_bhjyr")
+region = Rect2(0, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5kve"]
+atlas = ExtResource("1_bhjyr")
+region = Rect2(0, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjcwr"]
+atlas = ExtResource("1_bhjyr")
+region = Rect2(24, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30tie"]
+atlas = ExtResource("1_bhjyr")
+region = Rect2(48, 48, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cy8e0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bhjyr")
+}],
+"loop": 0,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xv5ed")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5kve")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pjcwr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_30tie")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pjcwr")
+}],
+"loop": 1,
+"name": &"move",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y5ukg"]
+radius = 7.0
+height = 16.0
+
+[node name="PlayerCharacter" type="CharacterBody2D" unique_id=1932238009]
+z_index = 2
+motion_mode = 1
+script = ExtResource("1_w5kve")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=47286101]
+sprite_frames = SubResource("SpriteFrames_cy8e0")
+animation = &"move"
+frame_progress = 0.42060304
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=478042129]
+position = Vector2(0, 4)
+shape = SubResource("CapsuleShape2D_y5ukg")
+
+[node name="RifleWeapon" parent="." unique_id=71603366 instance=ExtResource("3_pjcwr")]
+position = Vector2(0, 4)
+
+[node name="FmodListener2D" type="FmodListener2D" parent="." unique_id=1555574148]

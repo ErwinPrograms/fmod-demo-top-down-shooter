@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://be3tg73g34mjf"]
+
+[ext_resource type="PackedScene" uid="uid://cwik15sd66qdm" path="res://scenes/entities/characters/player_character.tscn" id="1_u11kh"]
+[ext_resource type="PackedScene" uid="uid://c2uqqnt6xno72" path="res://scenes/entities/characters/bug_enemy.tscn" id="2_wlqje"]
+
+[node name="GameWorld" type="Node2D" unique_id=687093545]
+y_sort_enabled = true
+
+[node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=480171807]
+bank_paths = ["res://assets/banks/Master.bank", "res://assets/banks/Master.strings.bank"]
+
+[node name="PlayerCharacter" parent="." unique_id=1932238009 instance=ExtResource("1_u11kh")]
+position = Vector2(150, 79)
+
+[node name="EnemyContainer" type="Node" parent="." unique_id=490501826]
+
+[node name="BugEnemy" parent="EnemyContainer" unique_id=241675179 instance=ExtResource("2_wlqje")]
+position = Vector2(257, 102)
+
+[node name="BugEnemy2" parent="EnemyContainer" unique_id=1568330709 instance=ExtResource("2_wlqje")]
+position = Vector2(293, 60)
+
+[node name="BugEnemy3" parent="EnemyContainer" unique_id=41982758 instance=ExtResource("2_wlqje")]
+position = Vector2(301, 115)
+
+[node name="BugEnemy4" parent="EnemyContainer" unique_id=1806599847 instance=ExtResource("2_wlqje")]
+position = Vector2(199, 23)
+
+[node name="BugEnemy5" parent="EnemyContainer" unique_id=1265973075 instance=ExtResource("2_wlqje")]
+position = Vector2(209, 92)
+
+[node name="BugEnemy6" parent="EnemyContainer" unique_id=1086294301 instance=ExtResource("2_wlqje")]
+position = Vector2(251, 15)
