@@ -23,6 +23,7 @@ config/icon="uid://dau7qm1yo4yc0"
 [autoload]
 
 FmodManager="*uid://cds10pm7hwn3p"
+EventBus="*uid://6p1cok4uqpce"
 
 [display]
 

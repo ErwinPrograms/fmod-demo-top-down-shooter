@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://be3tg73g34mjf"]
 
+[ext_resource type="Script" uid="uid://bxj35nnf5slm4" path="res://scenes/roots/fmod_soundtrack_emitter_2d.gd" id="1_03vof"]
 [ext_resource type="PackedScene" uid="uid://cwik15sd66qdm" path="res://scenes/entities/characters/player_character.tscn" id="1_u11kh"]
 [ext_resource type="PackedScene" uid="uid://c2uqqnt6xno72" path="res://scenes/entities/characters/bug_enemy.tscn" id="2_wlqje"]
 
@@ -8,6 +9,11 @@ y_sort_enabled = true
 
 [node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=480171807]
 bank_paths = ["res://assets/banks/Desktop/Master.strings.bank", "res://assets/banks/Desktop/Master.bank"]
+
+[node name="FmodSoundtrackEmitter2D" type="FmodEventEmitter2D" parent="." unique_id=1337522433]
+event_guid = "{0000005f-006e-0000-6f00-000064000000}"
+autoplay = true
+script = ExtResource("1_03vof")
 
 [node name="PlayerCharacter" parent="." unique_id=1932238009 instance=ExtResource("1_u11kh")]
 position = Vector2(150, 79)
