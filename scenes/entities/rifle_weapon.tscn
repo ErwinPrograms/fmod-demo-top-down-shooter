@@ -7,9 +7,10 @@
 script = ExtResource("1_3jtpi")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=786014312]
-position = Vector2(4, -9)
+position = Vector2(15, 1)
 texture = ExtResource("1_e3j7a")
 centered = false
+offset = Vector2(-11, -10)
 region_enabled = true
 region_rect = Rect2(121, 1, 24, 24)
 
@@ -20,6 +21,10 @@ position = Vector2(24, 0)
 wait_time = 0.33
 one_shot = true
 
-[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="." unique_id=2083576035]
+[node name="ShootSoundEmitter2D" type="FmodEventEmitter2D" parent="." unique_id=2083576035]
 event_name = "event:/Shooting"
 event_guid = "{c4bf9bf8-ed97-4e68-a243-d1743bb8ee35}"
+
+[node name="ReloadSoundEmitter2D" type="FmodEventEmitter2D" parent="." unique_id=1517788058]
+event_name = "event:/Death sound"
+event_guid = "{78a56967-685f-465d-9612-db4efc9c87e9}"

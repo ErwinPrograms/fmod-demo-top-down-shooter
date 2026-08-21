@@ -21,7 +21,6 @@ func _on_lifespan_timer_timeout() -> void:
 	queue_free()
 
 func _on_body_entered(body: Node2D) -> void:
-	print("body entered: %s" % body)
 	if body is BugEnemy:
 		body.take_damage(damage)
 		queue_free()
