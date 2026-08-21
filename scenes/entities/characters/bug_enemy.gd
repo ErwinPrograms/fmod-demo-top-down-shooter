@@ -18,5 +18,6 @@ func die() -> void:
 	
 	#placeholder queue free
 	$FmodEventEmitter2D.play_one_shot()
+	EventBus.enemy_died.emit()
 	await get_tree().create_timer(1).timeout
 	queue_free()

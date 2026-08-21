@@ -47,3 +47,4 @@ func fire_rifle() -> void:
 	get_tree().root.add_child(new_bullet)
 	
 	fire_rate_timer.start()
+	EventBus.bullet_fired.emit()
