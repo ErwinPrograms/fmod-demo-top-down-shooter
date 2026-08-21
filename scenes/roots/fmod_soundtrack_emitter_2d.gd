@@ -18,6 +18,6 @@ func _on_enemy_died() -> void:
 func _on_bullet_fired() -> void:
 	bullets_fired += 1
 	var max_intensity: int = 50
-	var flanger: float = lerp(0, 100, bullets_fired / max_intensity)
+	var flanger: float = lerp(0, 100, float(bullets_fired) / float(max_intensity))
 	
 	set_parameter("Flanger 2", flanger)
