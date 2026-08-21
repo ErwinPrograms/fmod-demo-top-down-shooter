@@ -26,5 +26,5 @@ event_name = "event:/Shooting"
 event_guid = "{c4bf9bf8-ed97-4e68-a243-d1743bb8ee35}"
 
 [node name="ReloadSoundEmitter2D" type="FmodEventEmitter2D" parent="." unique_id=1517788058]
-event_name = "event:/Death sound"
-event_guid = "{78a56967-685f-465d-9612-db4efc9c87e9}"
+event_name = "event:/Reload"
+event_guid = "{e1266182-0873-47ad-8bf6-5673ea1c5d3d}"
