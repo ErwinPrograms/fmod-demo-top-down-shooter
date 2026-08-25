@@ -8,7 +8,7 @@ const PROJECTILE = preload("res://scenes/entities/projectiles/rifle_bullet.tscn"
 @export var relative_position: Vector2
 @export var rounds_per_second: float = 10
 @export var reload_time: float = 1.3
-@export var ammo_capacity: int = 10
+@export var ammo_capacity: int = 6
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var fire_rate_timer: Timer = $FireRateTimer
