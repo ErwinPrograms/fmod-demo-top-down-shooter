@@ -26,6 +26,7 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6htvs"]
+height = 24.0
 
 [node name="BugEnemy" type="CharacterBody2D" unique_id=241675179]
 collision_layer = 2

@@ -23,9 +23,15 @@ script = ExtResource("1_03vof")
 [node name="PlayerCharacter" parent="." unique_id=1932238009 instance=ExtResource("1_u11kh")]
 position = Vector2(150, 79)
 
+[node name="CollisionShape2D" parent="PlayerCharacter" index="1" unique_id=478042129]
+process_priority = 1
+z_index = 1
+
 [node name="EnemyContainer" type="Node" parent="." unique_id=490501826]
 
 [node name="BugEnemy" parent="EnemyContainer" unique_id=241675179 instance=ExtResource("2_wlqje")]
+process_priority = 1
+z_index = 1
 position = Vector2(235, 95)
 
 [node name="BugEnemy2" parent="EnemyContainer" unique_id=1568330709 instance=ExtResource("2_wlqje")]
