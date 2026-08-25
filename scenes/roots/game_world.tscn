@@ -26,7 +26,7 @@ position = Vector2(150, 79)
 [node name="EnemyContainer" type="Node" parent="." unique_id=490501826]
 
 [node name="BugEnemy" parent="EnemyContainer" unique_id=241675179 instance=ExtResource("2_wlqje")]
-position = Vector2(257, 102)
+position = Vector2(235, 95)
 
 [node name="BugEnemy2" parent="EnemyContainer" unique_id=1568330709 instance=ExtResource("2_wlqje")]
 position = Vector2(293, 60)
@@ -35,10 +35,10 @@ position = Vector2(293, 60)
 position = Vector2(301, 115)
 
 [node name="BugEnemy4" parent="EnemyContainer" unique_id=1806599847 instance=ExtResource("2_wlqje")]
-position = Vector2(199, 23)
+position = Vector2(96, 52)
 
 [node name="BugEnemy5" parent="EnemyContainer" unique_id=1265973075 instance=ExtResource("2_wlqje")]
-position = Vector2(209, 92)
+position = Vector2(63, 126)
 
 [node name="BugEnemy6" parent="EnemyContainer" unique_id=1086294301 instance=ExtResource("2_wlqje")]
 position = Vector2(251, 15)

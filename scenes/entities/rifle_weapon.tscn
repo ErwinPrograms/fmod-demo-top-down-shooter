@@ -24,6 +24,9 @@ one_shot = true
 [node name="ShootSoundEmitter2D" type="FmodEventEmitter2D" parent="." unique_id=2083576035]
 event_name = "event:/Shooting"
 event_guid = "{c4bf9bf8-ed97-4e68-a243-d1743bb8ee35}"
+"fmod_parameters/Gun shot variants/id" = 7743884725445977283
+"fmod_parameters/Gun shot variants" = 0.0
+"fmod_parameters/Gun shot variants/variant_type" = 3
 
 [node name="ReloadSoundEmitter2D" type="FmodEventEmitter2D" parent="." unique_id=1517788058]
 event_name = "event:/Reload"
