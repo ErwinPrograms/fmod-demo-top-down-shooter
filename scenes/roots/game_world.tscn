@@ -13,12 +13,15 @@ y_sort_enabled = true
 bank_paths = ["res://assets/banks/Desktop/Master.strings.bank", "res://assets/banks/Desktop/Master.bank"]
 
 [node name="FmodSoundtrackEmitter2D" type="FmodEventEmitter2D" parent="." unique_id=1337522433]
-event_name = "event:/Music"
-event_guid = "{6a56adfa-532c-4bee-810a-e013c70856df}"
+event_name = "event:/Stems"
+event_guid = "{b1fd3440-89c6-4117-aaa0-ae42b1a9b495}"
 autoplay = true
-"fmod_parameters/Flanger 2/id" = -6257781852401208009
-"fmod_parameters/Flanger 2" = 100.0
-"fmod_parameters/Flanger 2/variant_type" = 3
+fmod_parameters/Automation/id = 5237325316088967660
+fmod_parameters/Automation = 0.0
+fmod_parameters/Automation/variant_type = 3
+fmod_parameters/Health/id = -7626266418169339078
+fmod_parameters/Health = 0.0
+fmod_parameters/Health/variant_type = 3
 script = ExtResource("1_03vof")
 
 [node name="PlayerCharacter" parent="." unique_id=1932238009 instance=ExtResource("1_u11kh")]
