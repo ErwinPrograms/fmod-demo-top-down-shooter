@@ -23,13 +23,14 @@ var current_ammo: int:
 		current_ammo = value
 		ammo_changed.emit(current_ammo)
 		if shoot_sound_emitter_2d:
-			shoot_sound_emitter_2d.set_parameter("current ammo", current_ammo)
+			shoot_sound_emitter_2d.set_parameter("Gun shot variants", current_ammo)
 
 func _ready() -> void:
 	relative_position = position
 	fire_rate_timer.wait_time = (1 / rounds_per_second)
 	
 	current_ammo = ammo_capacity
+	
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
