@@ -15,7 +15,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="VBoxContainer/ParameterSliderContainer" unique_id=1522939341]
 layout_mode = 2
-text = "name_1"
+text = "Drums"
 
 [node name="AutomationHSlider" type="HSlider" parent="VBoxContainer/ParameterSliderContainer" unique_id=1978518077]
 custom_minimum_size = Vector2(100, 0)
@@ -24,12 +24,11 @@ max_value = 1.0
 step = 0.01
 
 [node name="ParameterSliderContainer2" type="HBoxContainer" parent="VBoxContainer" unique_id=1811153945]
-visible = false
 layout_mode = 2
 
 [node name="Label" type="Label" parent="VBoxContainer/ParameterSliderContainer2" unique_id=1707008994]
 layout_mode = 2
-text = "name_2"
+text = "Health"
 
 [node name="Automation2HSlider" type="HSlider" parent="VBoxContainer/ParameterSliderContainer2" unique_id=1219688184]
 custom_minimum_size = Vector2(100, 0)
@@ -38,3 +37,4 @@ max_value = 1.0
 step = 0.01
 
 [connection signal="value_changed" from="VBoxContainer/ParameterSliderContainer/AutomationHSlider" to="." method="_on_automation_h_slider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/ParameterSliderContainer2/Automation2HSlider" to="." method="_on_automation_2h_slider_value_changed"]

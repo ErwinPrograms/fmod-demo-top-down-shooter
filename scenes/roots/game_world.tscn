@@ -62,9 +62,10 @@ autowrap_mode = 0
 script = ExtResource("4_w3xm2")
 
 [node name="MusicTrackSliderMenu" parent="UILayer" unique_id=1136016164 instance=ExtResource("5_8kird")]
-offset_top = 140.0
-offset_right = 164.0
-offset_bottom = 180.0
+offset_left = 88.0
+offset_top = 129.0
+offset_right = 252.0
+offset_bottom = 179.0
 
 [connection signal="ammo_changed" from="PlayerCharacter/RifleWeapon" to="UILayer/AmmoLeftLabel" method="_on_rifle_weapon_ammo_changed"]
 
