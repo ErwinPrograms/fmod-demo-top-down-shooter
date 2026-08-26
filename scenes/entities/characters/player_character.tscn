@@ -1,42 +1,22 @@
 [gd_scene format=3 uid="uid://cwik15sd66qdm"]
 
-[ext_resource type="Texture2D" uid="uid://dt1eibe5j1o4q" path="res://assets/sprites/entities/player_tilemap_packed.png" id="1_bhjyr"]
 [ext_resource type="Script" uid="uid://bwq8ddnfg2f7" path="res://scenes/entities/characters/player_character.gd" id="1_w5kve"]
+[ext_resource type="Texture2D" uid="uid://dsuyss7cy2shl" path="res://assets/sprites_real/mouse/mouse_walk_0.png" id="2_d2iv8"]
+[ext_resource type="Texture2D" uid="uid://cwnqpyjyxf1c5" path="res://assets/sprites_real/mouse/mouse_walk_1.png" id="3_aslkn"]
 [ext_resource type="PackedScene" uid="uid://dmubfa0sxugxn" path="res://scenes/entities/rifle_weapon.tscn" id="3_pjcwr"]
+[ext_resource type="Texture2D" uid="uid://xn5qp2injj5b" path="res://assets/sprites_real/mouse/mouse_walk_2.png" id="4_dq05k"]
+[ext_resource type="Texture2D" uid="uid://bsy4kunjpvhox" path="res://assets/sprites_real/mouse/mouse_walk_3.png" id="5_e15ey"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bhjyr"]
-atlas = ExtResource("1_bhjyr")
-region = Rect2(72, 48, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xv5ed"]
-atlas = ExtResource("1_bhjyr")
-region = Rect2(0, 48, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_w5kve"]
-atlas = ExtResource("1_bhjyr")
-region = Rect2(0, 48, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pjcwr"]
-atlas = ExtResource("1_bhjyr")
-region = Rect2(24, 48, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_30tie"]
-atlas = ExtResource("1_bhjyr")
-region = Rect2(48, 48, 24, 24)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_cy8e0"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_3v5bp"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bhjyr")
-}],
+"frames": [],
 "loop": 0,
 "name": &"death",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xv5ed")
+"texture": ExtResource("2_d2iv8")
 }],
 "loop": 1,
 "name": &"idle",
@@ -44,20 +24,20 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_w5kve")
+"texture": ExtResource("2_d2iv8")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pjcwr")
+"texture": ExtResource("3_aslkn")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_30tie")
+"texture": ExtResource("4_dq05k")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pjcwr")
+"texture": ExtResource("5_e15ey")
 }],
 "loop": 1,
 "name": &"move",
-"speed": 10.0
+"speed": 8.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y5ukg"]
@@ -70,9 +50,8 @@ motion_mode = 1
 script = ExtResource("1_w5kve")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=47286101]
-sprite_frames = SubResource("SpriteFrames_cy8e0")
+sprite_frames = SubResource("SpriteFrames_3v5bp")
 animation = &"move"
-frame_progress = 0.42060304
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=478042129]
 position = Vector2(0, 4)

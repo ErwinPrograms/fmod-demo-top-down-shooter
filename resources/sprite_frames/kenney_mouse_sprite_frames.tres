@@ -1,0 +1,59 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://bs2iubuu62cpl"]
+
+[ext_resource type="Texture2D" uid="uid://dt1eibe5j1o4q" path="res://assets/sprites/entities/player_tilemap_packed.png" id="1_7ieab"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhjyr"]
+atlas = ExtResource("1_7ieab")
+region = Rect2(72, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xv5ed"]
+atlas = ExtResource("1_7ieab")
+region = Rect2(0, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5kve"]
+atlas = ExtResource("1_7ieab")
+region = Rect2(0, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjcwr"]
+atlas = ExtResource("1_7ieab")
+region = Rect2(24, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30tie"]
+atlas = ExtResource("1_7ieab")
+region = Rect2(48, 48, 24, 24)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bhjyr")
+}],
+"loop": 0,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xv5ed")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5kve")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pjcwr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_30tie")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pjcwr")
+}],
+"loop": 1,
+"name": &"move",
+"speed": 10.0
+}]
