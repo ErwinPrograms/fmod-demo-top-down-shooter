@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://cnxned2opgdsv"]
+
+[ext_resource type="Script" uid="uid://bkk1g72w7s27m" path="res://scenes/ui/music_track_slider_menu.gd" id="1_c6rfp"]
+
+[node name="MusicTrackSliderMenu" type="PanelContainer" unique_id=1136016164]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_c6rfp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1321463155]
+layout_mode = 2
+
+[node name="ParameterSliderContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=2009615860]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/ParameterSliderContainer" unique_id=1522939341]
+layout_mode = 2
+text = "name_1"
+
+[node name="AutomationHSlider" type="HSlider" parent="VBoxContainer/ParameterSliderContainer" unique_id=1978518077]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+
+[node name="ParameterSliderContainer2" type="HBoxContainer" parent="VBoxContainer" unique_id=1811153945]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/ParameterSliderContainer2" unique_id=1707008994]
+layout_mode = 2
+text = "name_2"
+
+[node name="Automation2HSlider" type="HSlider" parent="VBoxContainer/ParameterSliderContainer2" unique_id=1219688184]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+
+[connection signal="value_changed" from="VBoxContainer/ParameterSliderContainer/AutomationHSlider" to="." method="_on_automation_h_slider_value_changed"]

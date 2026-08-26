@@ -1,4 +1,7 @@
+class_name FmodSoundtrackEmitter2D
 extends FmodEventEmitter2D
+
+static var instance: FmodSoundtrackEmitter2D
 
 var num_enemies: int = 6 # hardcoded based off GameWorld scene
 var bullets_fired: int = 0
@@ -6,6 +9,8 @@ var bullets_fired: int = 0
 func _ready() -> void:
 	EventBus.enemy_died.connect(_on_enemy_died)
 	EventBus.bullet_fired.connect(_on_bullet_fired)
+	
+	instance = self
 
 func _on_enemy_died() -> void:
 	num_enemies -= 1
