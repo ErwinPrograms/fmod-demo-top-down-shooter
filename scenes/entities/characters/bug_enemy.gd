@@ -1,7 +1,7 @@
 class_name BugEnemy
 extends CharacterBody2D
 
-var health: int = 3
+@export var health: int = 3
 var dead: bool = false
 
 func take_damage(damage: int) -> void:
