@@ -32,3 +32,6 @@ event_guid = "{c4bf9bf8-ed97-4e68-a243-d1743bb8ee35}"
 [node name="ReloadSoundEmitter2D" type="FmodEventEmitter2D" parent="." unique_id=1517788058]
 event_name = "event:/Reload"
 event_guid = "{e1266182-0873-47ad-8bf6-5673ea1c5d3d}"
+
+[node name="EmptyChamberEmitter" type="FmodEventEmitter2D" parent="." unique_id=798846320]
+event_guid = "{0000005f-006e-0000-6f00-000064000000}"
