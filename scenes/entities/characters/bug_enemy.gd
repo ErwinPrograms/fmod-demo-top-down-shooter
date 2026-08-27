@@ -9,6 +9,8 @@ const BLOOD_PARTICLES: Resource = preload("uid://6uofx3muwlpl")
 var dead: bool = false
 var player: PlayerCharacter
 
+@onready var hit_marker: FmodEventEmitter2D = $HitMarker
+
 func _ready() -> void:
 	player = PlayerCharacter.Instance
 
@@ -22,6 +24,7 @@ func _physics_process(delta: float) -> void:
 
 
 func take_damage(damage: int) -> void:
+	hit_marker.play_one_shot()
 	health -= damage
 	
 	if health <= 0:

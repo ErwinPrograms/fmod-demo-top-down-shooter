@@ -44,3 +44,6 @@ shape = SubResource("CapsuleShape2D_6htvs")
 [node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="." unique_id=192388417]
 event_name = "event:/Death sound"
 event_guid = "{78a56967-685f-465d-9612-db4efc9c87e9}"
+
+[node name="HitMarker" type="FmodEventEmitter2D" parent="." unique_id=623508456]
+event_guid = "{0000005f-006e-0000-6f00-000064000000}"
