@@ -4,6 +4,7 @@ extends Node2D
 signal ammo_changed(new_ammo: int)
 
 const PROJECTILE = preload("res://scenes/entities/projectiles/rifle_bullet.tscn")
+const RELOAD_PARTICLES: Resource = preload("uid://ddggk562ii7e5")
 
 @export var relative_position: Vector2
 @export var rounds_per_second: float = 10
@@ -70,6 +71,12 @@ func fire_rifle() -> void:
 	EventBus.bullet_fired.emit()
 
 func start_reload() -> void:
+	var reload_particles: RevolverReloadParticles = RELOAD_PARTICLES.instantiate()
+	add_child(reload_particles)
+	reload_particles.position = sprite_2d.position
+	reload_particles.finished.connect(func(): reload_particles.queue_free())
+	reload_particles.start_reload(sprite_2d)
+	
 	reload_sound_emitter_2d.play_one_shot()
 	sprite_2d.rotation = 0
 	var reload_tween := get_tree().create_tween()
