@@ -63,10 +63,10 @@ func set_rotation_and_position(looking_at: Vector2) -> void:
 func fire_rifle() -> void:
 	if !fire_rate_timer.is_stopped():
 		return
+	shoot_sound_emitter_2d.play_one_shot()
 	if current_ammo <= 0:
 		return
 	
-	shoot_sound_emitter_2d.play_one_shot()
 	
 	
 	var new_bullet: RifleBullet = PROJECTILE.instantiate()
