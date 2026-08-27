@@ -32,7 +32,8 @@ var current_ammo: int:
 		current_ammo = value
 		ammo_changed.emit(current_ammo)
 		if shoot_sound_emitter_2d:
-			shoot_sound_emitter_2d.set_parameter("Gun shot variants", current_ammo)
+			var param_value: float = 0.0 if current_ammo > 0 else 1.1
+			shoot_sound_emitter_2d.set_parameter("Gun shot variants", param_value)
 
 func _ready() -> void:
 	relative_position = position

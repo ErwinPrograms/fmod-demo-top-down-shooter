@@ -31,7 +31,8 @@ var current_ammo: int:
 		current_ammo = value
 		ammo_changed.emit(current_ammo)
 		if shoot_sound_emitter_2d:
-			shoot_sound_emitter_2d.set_parameter("Gun shot variants", current_ammo)
+			var param_value: float = 0.0 if current_ammo > 0 else 1.1
+			shoot_sound_emitter_2d.set_parameter("Gun shot variants", param_value)
 
 func _ready() -> void:
 	relative_position = position
@@ -44,7 +45,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		set_rotation_and_position(event.position)
 		
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		fire_rifle()
 	if Input.is_action_just_pressed("reload"):
