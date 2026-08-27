@@ -62,4 +62,5 @@ shape = SubResource("CapsuleShape2D_y5ukg")
 [node name="FmodListener2D" type="FmodListener2D" parent="." unique_id=1555574148]
 
 [node name="DeathSoundEmitter2D" type="FmodEventEmitter2D" parent="." unique_id=855697738]
-event_guid = "{0000005f-006e-0000-6f00-000064000000}"
+event_name = "event:/Player Death"
+event_guid = "{024b2d36-b8bc-4756-b712-7f82af05a695}"
