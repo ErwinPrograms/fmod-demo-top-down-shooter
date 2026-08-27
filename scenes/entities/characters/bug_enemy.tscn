@@ -46,4 +46,5 @@ event_name = "event:/Death sound"
 event_guid = "{78a56967-685f-465d-9612-db4efc9c87e9}"
 
 [node name="HitMarker" type="FmodEventEmitter2D" parent="." unique_id=623508456]
-event_guid = "{0000005f-006e-0000-6f00-000064000000}"
+event_name = "event:/Hitmarker"
+event_guid = "{2777a069-b033-409e-a824-044356723ff5}"
