@@ -3,8 +3,23 @@ extends CharacterBody2D
 
 const BLOOD_PARTICLES: Resource = preload("uid://6uofx3muwlpl")
 
+@export var move_speed: float = 20.0
 @export var health: int = 3
+
 var dead: bool = false
+var player: PlayerCharacter
+
+func _ready() -> void:
+	player = PlayerCharacter.Instance
+
+func _physics_process(delta: float) -> void:
+	if dead:
+		return
+	
+	velocity = move_speed * (player.position - position).normalized()
+	
+	move_and_slide()
+
 
 func take_damage(damage: int) -> void:
 	health -= damage

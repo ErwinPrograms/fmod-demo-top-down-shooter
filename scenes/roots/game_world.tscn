@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bxj35nnf5slm4" path="res://scenes/roots/fmod_soundtrack_emitter_2d.gd" id="1_03vof"]
 [ext_resource type="PackedScene" uid="uid://cwik15sd66qdm" path="res://scenes/entities/characters/player_character.tscn" id="1_u11kh"]
 [ext_resource type="PackedScene" uid="uid://c2uqqnt6xno72" path="res://scenes/entities/characters/bug_enemy.tscn" id="2_wlqje"]
+[ext_resource type="PackedScene" uid="uid://c2cm60t5npfq3" path="res://scenes/entities/enemies/enemy_respawn_node.tscn" id="3_pf5ul"]
 [ext_resource type="PackedScene" uid="uid://bb3y4rp4kmfup" path="res://scenes/ui/instant_die_button.tscn" id="4_uaasj"]
 [ext_resource type="Script" uid="uid://v7xqgc7mlob1" path="res://scenes/roots/ammo_left_label.gd" id="4_w3xm2"]
 [ext_resource type="PackedScene" uid="uid://cnxned2opgdsv" path="res://scenes/ui/music_track_slider_menu.tscn" id="5_8kird"]
@@ -28,11 +29,15 @@ script = ExtResource("1_03vof")
 [node name="PlayerCharacter" parent="." unique_id=1932238009 instance=ExtResource("1_u11kh")]
 position = Vector2(150, 79)
 
-[node name="CollisionShape2D" parent="PlayerCharacter" index="1" unique_id=478042129]
+[node name="CollisionShape2D" parent="PlayerCharacter" index="3" unique_id=478042129]
 process_priority = 1
 z_index = 1
 
 [node name="EnemyContainer" type="Node" parent="." unique_id=490501826]
+
+[node name="EnemyRespawnNode" parent="EnemyContainer" unique_id=469322040 instance=ExtResource("3_pf5ul")]
+respawn_time = 0.75
+enemies_per_wave = 1
 
 [node name="BugEnemy" parent="EnemyContainer" unique_id=241675179 instance=ExtResource("2_wlqje")]
 process_priority = 1
@@ -57,11 +62,11 @@ position = Vector2(251, 15)
 [node name="UILayer" type="CanvasLayer" parent="." unique_id=56946466]
 
 [node name="InstantDieButton" parent="UILayer" unique_id=916294035 instance=ExtResource("4_uaasj")]
-offset_top = 21.0
 offset_right = 91.0
-offset_bottom = 50.0
+offset_bottom = 29.0
 
 [node name="AmmoLeftLabel" type="RichTextLabel" parent="UILayer" unique_id=246729959]
+visible = false
 offset_right = 40.0
 offset_bottom = 40.0
 bbcode_enabled = true
@@ -71,9 +76,8 @@ autowrap_mode = 0
 script = ExtResource("4_w3xm2")
 
 [node name="MusicTrackSliderMenu" parent="UILayer" unique_id=1136016164 instance=ExtResource("5_8kird")]
-offset_left = 88.0
 offset_top = 129.0
-offset_right = 252.0
+offset_right = 164.0
 offset_bottom = 179.0
 
 [editable path="PlayerCharacter"]
