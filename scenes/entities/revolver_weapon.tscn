@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://b8nxqidrlp1c7"]
 
-[ext_resource type="Texture2D" uid="uid://clt0qa34fr2gf" path="res://assets/sprites/entities/weapon_tilemap_packed.png" id="1_4jvck"]
 [ext_resource type="Script" uid="uid://bn7kfe2b87ib1" path="res://scenes/entities/revolver_weapon.gd" id="1_g4heb"]
+[ext_resource type="Texture2D" uid="uid://hwmp85ogs7m4" path="res://assets/sprites_real/weapons/revolver_V2.png" id="2_g4heb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uaasj"]
-atlas = ExtResource("1_4jvck")
-region = Rect2(25, 1, 24, 24)
+atlas = ExtResource("2_g4heb")
+region = Rect2(3, 3, 32, 32)
 
 [node name="RevolverWeapon" type="Node2D" unique_id=71603366]
 script = ExtResource("1_g4heb")
@@ -16,7 +16,7 @@ texture = SubResource("AtlasTexture_uaasj")
 offset = Vector2(3, 0)
 
 [node name="MuzzleMarker" type="Marker2D" parent="." unique_id=191197361]
-position = Vector2(24, 0)
+position = Vector2(25, -3)
 
 [node name="FireRateTimer" type="Timer" parent="." unique_id=1404246958]
 wait_time = 0.33
