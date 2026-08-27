@@ -15,3 +15,5 @@ initial_velocity_max = 15.0
 damping_min = 5.0
 damping_max = 5.0
 angle_max = 89.0
+scale_amount_min = 2.0
+scale_amount_max = 2.0

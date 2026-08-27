@@ -4,7 +4,12 @@ extends CharacterBody2D
 @export var top_speed: float = 100.0
 @export var acceleration: float = 500.0
 
+static var Instance: PlayerCharacter
+
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+
+func _ready() -> void:
+	Instance = self
 
 func _physics_process(delta: float) -> void:
 
@@ -35,3 +40,8 @@ func modify_sprite() -> void:
 		animated_sprite_2d.flip_h = true
 	if velocity.x > 0:
 		animated_sprite_2d.flip_h = false
+
+func die() -> void:
+	$DeathSoundEmitter2D.play_one_shot()
+	animated_sprite_2d.rotate(PI / 2)
+	modulate = Color.RED

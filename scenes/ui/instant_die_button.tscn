@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://bb3y4rp4kmfup"]
 
+[ext_resource type="Script" uid="uid://b0i8evn2jy26g" path="res://scenes/ui/instant_die_button.gd" id="1_4l0tf"]
+
 [node name="InstantDieButton" type="Button" unique_id=916294035]
 offset_right = 206.0
 offset_bottom = 31.0
+script = ExtResource("1_4l0tf")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=2142046050]
 layout_mode = 0
@@ -13,3 +16,5 @@ bbcode_enabled = true
 text = "press this to instantly [shake][color=red]DIE"
 fit_content = true
 autowrap_mode = 0
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
