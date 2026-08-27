@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bb3y4rp4kmfup"]
+
+[node name="InstantDieButton" type="Button" unique_id=916294035]
+offset_right = 206.0
+offset_bottom = 31.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=2142046050]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+bbcode_enabled = true
+text = "press this to instantly [shake][color=red]DIE"
+fit_content = true
+autowrap_mode = 0

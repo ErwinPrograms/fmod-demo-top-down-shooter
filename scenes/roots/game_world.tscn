@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bxj35nnf5slm4" path="res://scenes/roots/fmod_soundtrack_emitter_2d.gd" id="1_03vof"]
 [ext_resource type="PackedScene" uid="uid://cwik15sd66qdm" path="res://scenes/entities/characters/player_character.tscn" id="1_u11kh"]
 [ext_resource type="PackedScene" uid="uid://c2uqqnt6xno72" path="res://scenes/entities/characters/bug_enemy.tscn" id="2_wlqje"]
+[ext_resource type="PackedScene" uid="uid://bb3y4rp4kmfup" path="res://scenes/ui/instant_die_button.tscn" id="4_uaasj"]
 [ext_resource type="Script" uid="uid://v7xqgc7mlob1" path="res://scenes/roots/ammo_left_label.gd" id="4_w3xm2"]
 [ext_resource type="PackedScene" uid="uid://cnxned2opgdsv" path="res://scenes/ui/music_track_slider_menu.tscn" id="5_8kird"]
 
@@ -55,6 +56,11 @@ position = Vector2(251, 15)
 
 [node name="UILayer" type="CanvasLayer" parent="." unique_id=56946466]
 
+[node name="InstantDieButton" parent="UILayer" unique_id=916294035 instance=ExtResource("4_uaasj")]
+offset_top = 21.0
+offset_right = 91.0
+offset_bottom = 50.0
+
 [node name="AmmoLeftLabel" type="RichTextLabel" parent="UILayer" unique_id=246729959]
 offset_right = 40.0
 offset_bottom = 40.0
@@ -69,7 +75,5 @@ offset_left = 88.0
 offset_top = 129.0
 offset_right = 252.0
 offset_bottom = 179.0
-
-[connection signal="ammo_changed" from="PlayerCharacter/RifleWeapon" to="UILayer/AmmoLeftLabel" method="_on_rifle_weapon_ammo_changed"]
 
 [editable path="PlayerCharacter"]
