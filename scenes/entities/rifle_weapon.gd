@@ -9,6 +9,14 @@ const PROJECTILE = preload("res://scenes/entities/projectiles/rifle_bullet.tscn"
 @export var rounds_per_second: float = 10
 @export var reload_time: float = 1.3
 @export var ammo_capacity: int = 6
+@export var disabled: bool = false:
+	set(value):
+		disabled = value
+		visible = not value
+		if disabled:
+			process_mode = Node.PROCESS_MODE_DISABLED
+		else:
+			process_mode = Node.PROCESS_MODE_INHERIT
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var fire_rate_timer: Timer = $FireRateTimer

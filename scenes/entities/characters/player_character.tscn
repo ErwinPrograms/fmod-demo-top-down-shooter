@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cwnqpyjyxf1c5" path="res://assets/sprites_real/mouse/mouse_walk_1.png" id="3_aslkn"]
 [ext_resource type="Texture2D" uid="uid://xn5qp2injj5b" path="res://assets/sprites_real/mouse/mouse_walk_2.png" id="4_dq05k"]
 [ext_resource type="Texture2D" uid="uid://bsy4kunjpvhox" path="res://assets/sprites_real/mouse/mouse_walk_3.png" id="5_e15ey"]
+[ext_resource type="PackedScene" uid="uid://dmubfa0sxugxn" path="res://scenes/entities/rifle_weapon.tscn" id="7_aslkn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3v5bp"]
 animations = [{
@@ -51,6 +52,8 @@ script = ExtResource("1_w5kve")
 
 [node name="RevolverWeapon" parent="." unique_id=71603366 instance=ExtResource("2_aslkn")]
 
+[node name="RifleWeapon" parent="." unique_id=525217579 instance=ExtResource("7_aslkn")]
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=47286101]
 sprite_frames = SubResource("SpriteFrames_3v5bp")
 animation = &"move"
@@ -62,5 +65,4 @@ shape = SubResource("CapsuleShape2D_y5ukg")
 [node name="FmodListener2D" type="FmodListener2D" parent="." unique_id=1555574148]
 
 [node name="DeathSoundEmitter2D" type="FmodEventEmitter2D" parent="." unique_id=855697738]
-event_name = "event:/Player Death"
 event_guid = "{024b2d36-b8bc-4756-b712-7f82af05a695}"
