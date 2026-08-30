@@ -3,5 +3,25 @@
 [ext_resource type="PackedScene" uid="uid://dbmi4ae37hnep" path="res://scenes/entities/projectiles/base_projectile.tscn" id="1_hh0n5"]
 [ext_resource type="Script" uid="uid://dsvmrlhurgju2" path="res://scenes/entities/projectiles/grenade.gd" id="2_wew4o"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wew4o"]
+size = Vector2(6, 2)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_det3i"]
+radius = 22.0
+
 [node name="Grenade" unique_id=641314660 instance=ExtResource("1_hh0n5")]
 script = ExtResource("2_wew4o")
+
+[node name="Sprite2D" parent="." index="0" unique_id=2083300111]
+region_rect = Rect2(81, 32, 6, 2)
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=1327890005]
+position = Vector2(0, 0)
+shape = SubResource("RectangleShape2D_wew4o")
+
+[node name="ExplosionRadius" type="Area2D" parent="." index="4" unique_id=1067615286]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExplosionRadius" index="0" unique_id=2016829955]
+shape = SubResource("CircleShape2D_det3i")
