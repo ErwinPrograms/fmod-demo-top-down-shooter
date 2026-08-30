@@ -10,6 +10,7 @@ const RELOAD_PARTICLES: Resource = preload("uid://ddggk562ii7e5")
 @export var rounds_per_second: float = 10
 @export var reload_time: float = 1.3
 @export var ammo_capacity: int = 6
+@export var damage: int = 5
 @export var disabled: bool = false:
 	set(value):
 		disabled = value
@@ -71,6 +72,7 @@ func fire_rifle() -> void:
 	shoot_sound_emitter_2d.play_one_shot()
 	
 	var new_bullet: RifleBullet = PROJECTILE.instantiate()
+	new_bullet.damage = damage
 	new_bullet.direction = Vector2.from_angle(rotation)
 	new_bullet.global_position = muzzle_marker.global_position
 	
