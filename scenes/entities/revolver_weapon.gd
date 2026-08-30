@@ -25,6 +25,7 @@ const RELOAD_PARTICLES: Resource = preload("uid://ddggk562ii7e5")
 @onready var muzzle_marker: Marker2D = $MuzzleMarker
 @onready var shoot_sound_emitter_2d: FmodEventEmitter2D = $ShootSoundEmitter2D
 @onready var reload_sound_emitter_2d: FmodEventEmitter2D = $ReloadSoundEmitter2D
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var current_ammo: int:
 	set(value):
@@ -75,6 +76,8 @@ func fire_rifle() -> void:
 	new_bullet.damage = damage
 	new_bullet.direction = Vector2.from_angle(rotation)
 	new_bullet.global_position = muzzle_marker.global_position
+	animation_player.play("fire")
+	
 	
 	get_tree().root.add_child(new_bullet)
 	current_ammo -= 1
