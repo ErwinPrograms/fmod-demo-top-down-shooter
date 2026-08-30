@@ -6,26 +6,35 @@ extends CharacterBody2D
 
 static var Instance: PlayerCharacter
 
-var current_weapon: Node2D:
+var current_weapon: Weapon:
 	set(value):
 		if value == current_weapon:
 			return
 		if current_weapon:
-			current_weapon.disabled = true
+			current_weapon.equipped = false
 		current_weapon = value
-		current_weapon.disabled = false
+		current_weapon.equipped = true
+var weapons: Array[Weapon]
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 func _ready() -> void:
 	Instance = self
-	#current_weapon = rifle_weapon
-#
-#func _unhandled_input(event: InputEvent) -> void:
-	#if event.is_action_pressed("weapon_1"):
-		#current_weapon = rifle_weapon
-	#if event.is_action_pressed("weapon_2"):
-		#current_weapon = revolver_weapon
+	var weapon_group = get_tree().get_nodes_in_group("weapon")
+	weapons = []
+	weapons.assign(weapon_group.filter(func(item): return item is Weapon))
+	current_weapon = weapons[0]
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("weapon_1") and weapons[0]:
+		current_weapon = weapons[0]
+	if event.is_action_pressed("weapon_2") and weapons[1]:
+		current_weapon = weapons[1]
+	if event.is_action_pressed("weapon_3") and weapons[2]:
+		current_weapon = weapons[2]
+	if event.is_action_pressed("weapon_4") and weapons[3]:
+		current_weapon = weapons[3]
+	
 
 func _physics_process(delta: float) -> void:
 

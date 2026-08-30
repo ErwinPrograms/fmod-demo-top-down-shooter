@@ -1,18 +1,13 @@
-[gd_scene format=3 uid="uid://b8nxqidrlp1c7"]
+[gd_scene format=3 uid="uid://lkg322v6uvt5"]
 
-[ext_resource type="Script" uid="uid://bn7kfe2b87ib1" path="res://scenes/weapons/revolver_weapon.gd" id="1_g4heb"]
-[ext_resource type="Texture2D" uid="uid://hwmp85ogs7m4" path="res://assets/sprites_real/weapons/revolver_V2.png" id="2_g4heb"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uaasj"]
-atlas = ExtResource("2_g4heb")
-region = Rect2(3, 3, 32, 32)
+[ext_resource type="Script" uid="uid://qbwnf4jf5y45" path="res://scenes/entities/weapons/base_weapon.gd" id="1_inxs3"]
 
 [sub_resource type="Animation" id="Animation_g4heb"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/path = NodePath("Sprite:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -24,7 +19,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/path = NodePath("Sprite:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -40,7 +35,7 @@ length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/path = NodePath("Sprite:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -52,7 +47,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/path = NodePath("Sprite:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -62,41 +57,46 @@ tracks/1/keys = {
 "values": [0.0, -0.61086524, 0.0]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_xqbcd"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kw2vi"]
 _data = {
 &"RESET": SubResource("Animation_g4heb"),
 &"fire": SubResource("Animation_tppl7")
 }
 
-[node name="RevolverWeapon" type="Node2D" unique_id=71603366]
-script = ExtResource("1_g4heb")
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_det3i"]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=786014312]
+[node name="BaseWeapon" type="Node2D" unique_id=338493741 groups=["weapon"]]
+script = ExtResource("1_inxs3")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=2146215455]
 position = Vector2(17, 1)
-texture = SubResource("AtlasTexture_uaasj")
 offset = Vector2(3, 0)
 
-[node name="MuzzleMarker" type="Marker2D" parent="." unique_id=191197361]
+[node name="MuzzleMarker" type="Marker2D" parent="." unique_id=517515705]
 position = Vector2(25, -3)
 
-[node name="FireRateTimer" type="Timer" parent="." unique_id=1404246958]
+[node name="FireRateTimer" type="Timer" parent="." unique_id=1905360689]
 wait_time = 0.33
 one_shot = true
 
-[node name="ShootSoundEmitter2D" type="FmodEventEmitter2D" parent="." unique_id=2083576035]
+[node name="ShootEmitter" type="FmodEventEmitter2D" parent="." unique_id=1721451479]
 event_name = "event:/Shooting"
 event_guid = "{c4bf9bf8-ed97-4e68-a243-d1743bb8ee35}"
 "fmod_parameters/Gun shot variants/id" = 7743884725445977283
 "fmod_parameters/Gun shot variants" = 0.0
 "fmod_parameters/Gun shot variants/variant_type" = 3
 
-[node name="ReloadSoundEmitter2D" type="FmodEventEmitter2D" parent="." unique_id=1517788058]
+[node name="ReloadEmitter" type="FmodEventEmitter2D" parent="." unique_id=201661888]
 event_name = "event:/Revolver Reload"
 event_guid = "{e1266182-0873-47ad-8bf6-5673ea1c5d3d}"
 
-[node name="EmptyChamberEmitter" type="FmodEventEmitter2D" parent="." unique_id=798846320]
+[node name="EmptyChamberEmitter" type="FmodEventEmitter2D" parent="." unique_id=1197728762]
 event_name = "event:/Empty chamber"
 event_guid = "{2ab520fa-c4f3-4fc9-8b1a-21ac76f0aa4e}"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=336424880]
-libraries/ = SubResource("AnimationLibrary_xqbcd")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2019799943]
+libraries/ = SubResource("AnimationLibrary_kw2vi")
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=614654338]
+tree_root = SubResource("AnimationNodeStateMachine_det3i")
+anim_player = NodePath("../AnimationPlayer")

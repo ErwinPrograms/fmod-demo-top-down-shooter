@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cenwyusj1vabp"]
 
-[ext_resource type="PackedScene" uid="uid://lkg322v6uvt5" path="res://scenes/weapons/base_weapon.tscn" id="1_6u51o"]
+[ext_resource type="PackedScene" uid="uid://lkg322v6uvt5" path="res://scenes/entities/weapons/base_weapon.tscn" id="1_6u51o"]
 [ext_resource type="Texture2D" uid="uid://cia8xxudul6u8" path="res://assets/sprites_real/weapons/SMG.png" id="2_5n1qh"]
 
 [node name="SMGWeapon" unique_id=338493741 instance=ExtResource("1_6u51o")]

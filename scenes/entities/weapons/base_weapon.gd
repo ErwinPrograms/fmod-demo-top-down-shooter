@@ -29,6 +29,11 @@ var current_ammo: int:
 		if shoot_emitter:
 			shoot_emitter.set_parameter("Gun shot variants", current_ammo)
 var reload_tween: Tween
+var equipped: bool = false:
+	set(value):
+		equipped = value
+		visible = equipped
+		set_process(equipped)
 
 @onready var shoot_emitter: FmodEventEmitter2D = $ShootEmitter
 @onready var reload_emitter: FmodEventEmitter2D = $ReloadEmitter
@@ -40,12 +45,16 @@ var reload_tween: Tween
 func _ready() -> void:
 	fire_rate_timer.wait_time = 1 / weapon_fire_rate
 	current_ammo = weapon_ammo_capacity
+	equipped = false
 
 func _process(_delta: float) -> void:
 	_handle_fire_input()
 	_point_to_cursor()
 
 func _unhandled_input(event: InputEvent) -> void:
+	if not equipped:
+		return
+	
 	if event.is_action_pressed("reload") and (not reload_tween or not reload_tween.is_running()):
 		reload()
 

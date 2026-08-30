@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://c7f6cqi8nyr63"]
+
+[ext_resource type="PackedScene" uid="uid://lkg322v6uvt5" path="res://scenes/entities/weapons/base_weapon.tscn" id="1_s1brf"]
+[ext_resource type="Texture2D" uid="uid://hwmp85ogs7m4" path="res://assets/sprites_real/weapons/revolver_V2.png" id="2_cqcq8"]
+
+[node name="RevolverWeapon" unique_id=338493741 instance=ExtResource("1_s1brf")]
+weapon_damage = 5
+weapon_fire_rate = 3.0
+weapon_reload_time = 0.81
+weapon_fire_type = 3
+
+[node name="Sprite" parent="." index="0" unique_id=2146215455]
+texture = ExtResource("2_cqcq8")
+offset = Vector2(1, -1)
+region_enabled = true
+region_rect = Rect2(9, 13, 15, 11)
