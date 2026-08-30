@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dkpvm80p78f4h"]
+
+[ext_resource type="PackedScene" uid="uid://dbmi4ae37hnep" path="res://scenes/entities/projectiles/base_projectile.tscn" id="1_hh0n5"]
+[ext_resource type="Script" uid="uid://dsvmrlhurgju2" path="res://scenes/entities/projectiles/grenade.gd" id="2_wew4o"]
+
+[node name="Grenade" unique_id=641314660 instance=ExtResource("1_hh0n5")]
+script = ExtResource("2_wew4o")

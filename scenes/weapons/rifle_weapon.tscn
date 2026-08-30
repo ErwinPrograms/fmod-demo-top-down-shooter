@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://dmubfa0sxugxn"]
 
-[ext_resource type="Script" uid="uid://tbej3ep0x3yo" path="res://scenes/entities/rifle_weapon.gd" id="1_3jtpi"]
-[ext_resource type="Texture2D" uid="uid://cia8xxudul6u8" path="res://assets/sprites_real/weapons/SMG.png" id="2_3jtpi"]
+[ext_resource type="Script" uid="uid://tbej3ep0x3yo" path="res://scenes/weapons/rifle_weapon.gd" id="1_6006x"]
+[ext_resource type="Texture2D" uid="uid://cia8xxudul6u8" path="res://assets/sprites_real/weapons/SMG.png" id="2_f7e6w"]
 
 [node name="RifleWeapon" type="Node2D" unique_id=71603366]
-script = ExtResource("1_3jtpi")
+script = ExtResource("1_6006x")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=786014312]
 position = Vector2(15, 1)
-texture = ExtResource("2_3jtpi")
+texture = ExtResource("2_f7e6w")
 centered = false
 offset = Vector2(-11, -10)
 region_enabled = true

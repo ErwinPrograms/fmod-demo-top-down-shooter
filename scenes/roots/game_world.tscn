@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bxj35nnf5slm4" path="res://scenes/roots/fmod_soundtrack_emitter_2d.gd" id="1_03vof"]
 [ext_resource type="PackedScene" uid="uid://cwik15sd66qdm" path="res://scenes/entities/characters/player_character.tscn" id="1_u11kh"]
-[ext_resource type="PackedScene" uid="uid://c2uqqnt6xno72" path="res://scenes/entities/characters/bug_enemy.tscn" id="2_wlqje"]
+[ext_resource type="PackedScene" uid="uid://c2uqqnt6xno72" path="res://scenes/entities/enemies/bug_enemy.tscn" id="2_wlqje"]
 [ext_resource type="PackedScene" uid="uid://c2cm60t5npfq3" path="res://scenes/entities/enemies/enemy_respawn_node.tscn" id="3_pf5ul"]
 [ext_resource type="PackedScene" uid="uid://bb3y4rp4kmfup" path="res://scenes/ui/instant_die_button.tscn" id="4_uaasj"]
 [ext_resource type="Script" uid="uid://v7xqgc7mlob1" path="res://scenes/roots/ammo_left_label.gd" id="4_w3xm2"]
@@ -32,6 +32,9 @@ position = Vector2(150, 79)
 [node name="CollisionShape2D" parent="PlayerCharacter" index="3" unique_id=478042129]
 process_priority = 1
 z_index = 1
+
+[node name="DeathSoundEmitter2D" parent="PlayerCharacter" index="5" unique_id=855697738]
+event_name = "event:/Player Death"
 
 [node name="EnemyContainer" type="Node" parent="." unique_id=490501826]
 

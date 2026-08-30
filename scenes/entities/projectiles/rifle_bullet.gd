@@ -1,16 +1,12 @@
 class_name RifleBullet
 extends Area2D
 
-@export var direction: Vector2
 @export var speed: float = 200.0
-@export var damage: int = 2
 @export var trail_length: float = 100
-#damage
-#owner
 
-#range
-#starting at
-# lifetime
+var direction: Vector2
+var damage: int = 2
+
 @onready var trail_line: Line2D = $TrailLine
 
 func _process(delta: float) -> void:

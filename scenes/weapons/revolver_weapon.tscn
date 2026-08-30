@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b8nxqidrlp1c7"]
 
-[ext_resource type="Script" uid="uid://bn7kfe2b87ib1" path="res://scenes/entities/revolver_weapon.gd" id="1_g4heb"]
+[ext_resource type="Script" uid="uid://bn7kfe2b87ib1" path="res://scenes/weapons/revolver_weapon.gd" id="1_g4heb"]
 [ext_resource type="Texture2D" uid="uid://hwmp85ogs7m4" path="res://assets/sprites_real/weapons/revolver_V2.png" id="2_g4heb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uaasj"]
@@ -31,12 +31,12 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [-0.61086524]
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_tppl7"]
 resource_name = "fire"
-length = 0.19999999999999998
+length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -73,7 +73,6 @@ script = ExtResource("1_g4heb")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=786014312]
 position = Vector2(17, 1)
-rotation = -0.61086524
 texture = SubResource("AtlasTexture_uaasj")
 offset = Vector2(3, 0)
 

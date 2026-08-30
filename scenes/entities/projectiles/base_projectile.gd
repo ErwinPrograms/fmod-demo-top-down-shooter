@@ -1,0 +1,2 @@
+class_name BaseProjectile
+extends Area2D

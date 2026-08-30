@@ -1,5 +1,5 @@
 class_name BugEnemy
-extends CharacterBody2D
+extends BaseEnemy
 
 const BLOOD_PARTICLES: Resource = preload("uid://6uofx3muwlpl")
 
