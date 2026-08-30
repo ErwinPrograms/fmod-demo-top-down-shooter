@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://clt0qa34fr2gf" path="res://assets/sprites/entities/weapon_tilemap_packed.png" id="2_dvxcu"]
 
 [node name="RifleWeapon" unique_id=338493741 instance=ExtResource("1_bibno")]
-weapon_damage = 2
+weapon_damage = 3
 weapon_fire_rate = 3.0
 weapon_reload_time = 2.01
 weapon_ammo_capacity = 15

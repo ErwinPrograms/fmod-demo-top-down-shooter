@@ -62,6 +62,7 @@ position = Vector2(251, 15)
 [node name="UILayer" type="CanvasLayer" parent="." unique_id=56946466]
 
 [node name="InstantDieButton" parent="UILayer" unique_id=916294035 instance=ExtResource("4_uaasj")]
+visible = false
 offset_right = 91.0
 offset_bottom = 29.0
 
@@ -76,6 +77,7 @@ autowrap_mode = 0
 script = ExtResource("4_w3xm2")
 
 [node name="MusicTrackSliderMenu" parent="UILayer" unique_id=1136016164 instance=ExtResource("5_8kird")]
+visible = false
 offset_top = 129.0
 offset_right = 164.0
 offset_bottom = 179.0
