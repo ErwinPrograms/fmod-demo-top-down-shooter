@@ -5,10 +5,10 @@ var explosion_damage: int = 3
 
 @onready var explosion_radius: Area2D = $ExplosionRadius
 
-func _ready() -> void:
-	#body_entered.disconnect(_on_body_entered)
-	pass
+func _process(delta: float) -> void:
+	super(delta)
 	
+	$Sprite2D.rotation = direction.angle()
 
 func _on_body_entered(body: Node2D) -> void:
 	super(body)
