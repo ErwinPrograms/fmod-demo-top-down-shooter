@@ -29,12 +29,9 @@ script = ExtResource("1_03vof")
 [node name="PlayerCharacter" parent="." unique_id=1932238009 instance=ExtResource("1_u11kh")]
 position = Vector2(150, 79)
 
-[node name="CollisionShape2D" parent="PlayerCharacter" index="3" unique_id=478042129]
+[node name="CollisionShape2D" parent="PlayerCharacter" index="2" unique_id=478042129]
 process_priority = 1
 z_index = 1
-
-[node name="DeathSoundEmitter2D" parent="PlayerCharacter" index="5" unique_id=855697738]
-event_name = "event:/Player Death"
 
 [node name="EnemyContainer" type="Node" parent="." unique_id=490501826]
 
@@ -82,5 +79,7 @@ script = ExtResource("4_w3xm2")
 offset_top = 129.0
 offset_right = 164.0
 offset_bottom = 179.0
+
+[node name="ProjectileContainer" type="Node" parent="." unique_id=1061077596 groups=["projectile_container"]]
 
 [editable path="PlayerCharacter"]

@@ -12,7 +12,7 @@ enum Enemy {
 
 static func instantiate_projectile(type: Projectile) -> BaseProjectile:
 	var type_preload: Dictionary[Projectile, Resource] = {
-		Projectile.BULLET : preload("uid://csrl42tju8jwf"),
+		Projectile.BULLET : preload("uid://d22kr7ccinnur"),
 		Projectile.GRENADE: preload("uid://dkpvm80p78f4h")
 	}
 	return type_preload[type].instantiate()

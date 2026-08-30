@@ -46,7 +46,7 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
-		set_rotation_and_position(event.position)
+		set_rotation_and_position(event.global_position)
 	if event is InputEventMouseButton and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		if current_ammo == 0:
 			$EmptyChamberEmitter.play_one_shot()

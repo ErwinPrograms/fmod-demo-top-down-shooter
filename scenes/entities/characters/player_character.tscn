@@ -1,12 +1,11 @@
 [gd_scene format=3 uid="uid://cwik15sd66qdm"]
 
 [ext_resource type="Script" uid="uid://bwq8ddnfg2f7" path="res://scenes/entities/characters/player_character.gd" id="1_w5kve"]
-[ext_resource type="PackedScene" uid="uid://b8nxqidrlp1c7" path="res://scenes/weapons/revolver_weapon.tscn" id="2_aslkn"]
+[ext_resource type="PackedScene" uid="uid://cenwyusj1vabp" path="res://scenes/weapons/smg_weapon.tscn" id="2_aslkn"]
 [ext_resource type="Texture2D" uid="uid://dsuyss7cy2shl" path="res://assets/sprites_real/mouse/mouse_walk_0.png" id="2_d2iv8"]
 [ext_resource type="Texture2D" uid="uid://cwnqpyjyxf1c5" path="res://assets/sprites_real/mouse/mouse_walk_1.png" id="3_aslkn"]
 [ext_resource type="Texture2D" uid="uid://xn5qp2injj5b" path="res://assets/sprites_real/mouse/mouse_walk_2.png" id="4_dq05k"]
 [ext_resource type="Texture2D" uid="uid://bsy4kunjpvhox" path="res://assets/sprites_real/mouse/mouse_walk_3.png" id="5_e15ey"]
-[ext_resource type="PackedScene" uid="uid://dmubfa0sxugxn" path="res://scenes/weapons/rifle_weapon.tscn" id="7_aslkn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3v5bp"]
 animations = [{
@@ -50,9 +49,7 @@ z_index = 2
 motion_mode = 1
 script = ExtResource("1_w5kve")
 
-[node name="RevolverWeapon" parent="." unique_id=71603366 instance=ExtResource("2_aslkn")]
-
-[node name="RifleWeapon" parent="." unique_id=525217579 instance=ExtResource("7_aslkn")]
+[node name="SMGWeapon" parent="." unique_id=338493741 instance=ExtResource("2_aslkn")]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=47286101]
 sprite_frames = SubResource("SpriteFrames_3v5bp")
@@ -65,4 +62,7 @@ shape = SubResource("CapsuleShape2D_y5ukg")
 [node name="FmodListener2D" type="FmodListener2D" parent="." unique_id=1555574148]
 
 [node name="DeathSoundEmitter2D" type="FmodEventEmitter2D" parent="." unique_id=855697738]
+event_name = "event:/Player Death"
 event_guid = "{024b2d36-b8bc-4756-b712-7f82af05a695}"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1305420966]

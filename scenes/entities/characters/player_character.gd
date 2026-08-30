@@ -16,19 +16,16 @@ var current_weapon: Node2D:
 		current_weapon.disabled = false
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-@onready var revolver_weapon: RevolverWeapon = $RevolverWeapon
-@onready var rifle_weapon: RifleWeapon = $RifleWeapon
 
 func _ready() -> void:
 	Instance = self
-	current_weapon = rifle_weapon
-	revolver_weapon.disabled = true
-
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("weapon_1"):
-		current_weapon = rifle_weapon
-	if event.is_action_pressed("weapon_2"):
-		current_weapon = revolver_weapon
+	#current_weapon = rifle_weapon
+#
+#func _unhandled_input(event: InputEvent) -> void:
+	#if event.is_action_pressed("weapon_1"):
+		#current_weapon = rifle_weapon
+	#if event.is_action_pressed("weapon_2"):
+		#current_weapon = revolver_weapon
 
 func _physics_process(delta: float) -> void:
 

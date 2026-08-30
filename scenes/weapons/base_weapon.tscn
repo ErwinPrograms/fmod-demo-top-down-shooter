@@ -7,7 +7,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/path = NodePath("Sprite:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -19,7 +19,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/path = NodePath("Sprite:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -35,7 +35,7 @@ length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/path = NodePath("Sprite:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -47,7 +47,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/path = NodePath("Sprite:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -65,10 +65,10 @@ _data = {
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_det3i"]
 
-[node name="BaseWeapon" type="Node2D" unique_id=338493741]
+[node name="BaseWeapon" type="Node2D" unique_id=338493741 groups=["weapon"]]
 script = ExtResource("1_inxs3")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2146215455]
+[node name="Sprite" type="Sprite2D" parent="." unique_id=2146215455]
 position = Vector2(17, 1)
 offset = Vector2(3, 0)
 
@@ -79,14 +79,14 @@ position = Vector2(25, -3)
 wait_time = 0.33
 one_shot = true
 
-[node name="ShootSoundEmitter2D" type="FmodEventEmitter2D" parent="." unique_id=1721451479]
+[node name="ShootEmitter" type="FmodEventEmitter2D" parent="." unique_id=1721451479]
 event_name = "event:/Shooting"
 event_guid = "{c4bf9bf8-ed97-4e68-a243-d1743bb8ee35}"
 "fmod_parameters/Gun shot variants/id" = 7743884725445977283
 "fmod_parameters/Gun shot variants" = 0.0
 "fmod_parameters/Gun shot variants/variant_type" = 3
 
-[node name="ReloadSoundEmitter2D" type="FmodEventEmitter2D" parent="." unique_id=201661888]
+[node name="ReloadEmitter" type="FmodEventEmitter2D" parent="." unique_id=201661888]
 event_name = "event:/Revolver Reload"
 event_guid = "{e1266182-0873-47ad-8bf6-5673ea1c5d3d}"
 
