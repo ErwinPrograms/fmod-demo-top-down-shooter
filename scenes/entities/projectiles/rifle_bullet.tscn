@@ -6,6 +6,10 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jm2ff"]
 size = Vector2(6, 6)
 
+[sub_resource type="Gradient" id="Gradient_jm2ff"]
+offsets = PackedFloat32Array(0, 0.118421055, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1)
+
 [node name="RifleBullet" type="Area2D" unique_id=641314660]
 collision_layer = 8
 collision_mask = 23
@@ -23,6 +27,12 @@ shape = SubResource("RectangleShape2D_jm2ff")
 [node name="LifespanTimer" type="Timer" parent="." unique_id=708302984]
 one_shot = true
 autostart = true
+
+[node name="TrailLine" type="Line2D" parent="." unique_id=1765020110]
+position = Vector2(0, -1)
+points = PackedVector2Array(0, 0, 0, 0)
+width = 2.0
+gradient = SubResource("Gradient_jm2ff")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="LifespanTimer" to="." method="_on_lifespan_timer_timeout"]
