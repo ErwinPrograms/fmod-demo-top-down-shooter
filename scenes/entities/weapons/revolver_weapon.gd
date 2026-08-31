@@ -1,3 +1,4 @@
+class_name RevolverWeapon
 extends Weapon
 
 const REVOLVER_RELOAD_PARTICLES = preload("uid://ddggk562ii7e5")

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cypm2bkcslxmy"]
+
+[ext_resource type="PackedScene" uid="uid://lkg322v6uvt5" path="res://scenes/entities/weapons/base_weapon.tscn" id="1_464or"]
+[ext_resource type="Texture2D" uid="uid://hwmp85ogs7m4" path="res://assets/sprites_real/weapons/revolver_V2.png" id="2_jtsym"]
+[ext_resource type="Script" uid="uid://bij5jdfpg5g3g" path="res://scenes/entities/weapons/big_revolver.gd" id="2_xvdeo"]
+
+[node name="BigRevolver" unique_id=338493741 instance=ExtResource("1_464or")]
+script = ExtResource("2_xvdeo")
+knockback_velocity = 1000.0
+weapon_damage = 100
+weapon_fire_type = 3
+
+[node name="Sprite" parent="." index="0" unique_id=2146215455]
+scale = Vector2(4, 4)
+texture = ExtResource("2_jtsym")
+offset = Vector2(1.25, 2.5)
+region_enabled = true
+region_rect = Rect2(9, 13, 15, 11)
+
+[node name="MuzzleMarker" parent="." index="1" unique_id=517515705]
+position = Vector2(51, -2)

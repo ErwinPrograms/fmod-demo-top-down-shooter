@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://xn5qp2injj5b" path="res://assets/sprites_real/mouse/mouse_walk_2.png" id="4_dq05k"]
 [ext_resource type="Texture2D" uid="uid://bsy4kunjpvhox" path="res://assets/sprites_real/mouse/mouse_walk_3.png" id="5_e15ey"]
 [ext_resource type="PackedScene" uid="uid://c7f6cqi8nyr63" path="res://scenes/entities/weapons/revolver_weapon.tscn" id="7_aslkn"]
-[ext_resource type="PackedScene" uid="uid://dnky4mbi30a35" path="res://scenes/entities/weapons/rifle_weapon.tscn" id="8_dq05k"]
+[ext_resource type="PackedScene" uid="uid://cypm2bkcslxmy" path="res://scenes/entities/weapons/big_revolver.tscn" id="8_e15ey"]
 [ext_resource type="PackedScene" uid="uid://ds6fi10v13fw8" path="res://scenes/entities/weapons/grenade_launcher_weapon.tscn" id="9_e15ey"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3v5bp"]
@@ -72,8 +72,8 @@ event_guid = "{024b2d36-b8bc-4756-b712-7f82af05a695}"
 
 [node name="SMGWeapon" parent="WeaponsContainer" unique_id=302540297 instance=ExtResource("2_aslkn")]
 
-[node name="RifleWeapon" parent="WeaponsContainer" unique_id=496288796 instance=ExtResource("8_dq05k")]
-
 [node name="RevolverWeapon" parent="WeaponsContainer" unique_id=1175144875 instance=ExtResource("7_aslkn")]
+
+[node name="BigRevolver" parent="WeaponsContainer" unique_id=338493741 instance=ExtResource("8_e15ey")]
 
 [node name="GrenadeLauncherWeapon" parent="WeaponsContainer" unique_id=1105803735 instance=ExtResource("9_e15ey")]

@@ -37,8 +37,8 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 
 func _physics_process(delta: float) -> void:
-
 	get_input_change_velocity(delta)
+	apply_velocity_damping(delta)
 	modify_sprite()
 	move_and_slide()
 
@@ -51,8 +51,10 @@ func get_input_change_velocity(delta: float) -> void:
 		velocity += acceleration * -velocity.normalized() * delta
 	
 	velocity += acceleration * input_direction * delta
+
+func apply_velocity_damping(delta: float) -> void:
 	if velocity.length() > top_speed:
-		velocity = velocity.normalized() * top_speed
+		velocity = velocity.move_toward(velocity.normalized() * top_speed, acceleration * delta)
 
 func modify_sprite() -> void:
 	if velocity != Vector2.ZERO:
