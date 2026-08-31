@@ -14,3 +14,7 @@ texture = ExtResource("2_dvxcu")
 offset = Vector2(0, -1)
 region_enabled = true
 region_rect = Rect2(122, 6, 20, 12)
+
+[node name="ReloadEmitter" parent="." index="4" unique_id=201661888]
+event_name = "event:/Rifle Reload"
+event_guid = "{df231a0d-f08a-45bd-9735-ff54b527f4c5}"

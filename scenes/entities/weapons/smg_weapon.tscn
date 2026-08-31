@@ -15,3 +15,7 @@ region_rect = Rect2(8, 12, 17, 12)
 
 [node name="MuzzleMarker" parent="." index="1" unique_id=517515705]
 position = Vector2(27, -1)
+
+[node name="ReloadEmitter" parent="." index="4" unique_id=201661888]
+event_name = "event:/Rifle Reload"
+event_guid = "{df231a0d-f08a-45bd-9735-ff54b527f4c5}"

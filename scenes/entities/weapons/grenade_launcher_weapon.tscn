@@ -15,3 +15,11 @@ texture = ExtResource("2_bm7hn")
 offset = Vector2(0, -3)
 region_enabled = true
 region_rect = Rect2(171, 29, 18, 11)
+
+[node name="ShootEmitter" parent="." index="3" unique_id=1721451479]
+event_name = "event:/Grenade Launcher Plink"
+event_guid = "{c65e547f-af0d-46ba-9c80-c4923d28200e}"
+
+[node name="ReloadEmitter" parent="." index="4" unique_id=201661888]
+event_name = "event:/Grenade Launcher reload"
+event_guid = "{b2ab1df0-60d8-4dfd-8fe0-309387e43453}"
