@@ -2,14 +2,33 @@
 
 [ext_resource type="PackedScene" uid="uid://lkg322v6uvt5" path="res://scenes/entities/weapons/base_weapon.tscn" id="1_6u51o"]
 [ext_resource type="Texture2D" uid="uid://cia8xxudul6u8" path="res://assets/sprites_real/weapons/SMG.png" id="2_5n1qh"]
+[ext_resource type="Script" uid="uid://onyo5p3owarl" path="res://scenes/entities/weapons/smg_weapon.gd" id="2_qfybe"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_838ej"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5n1qh")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_qfybe"]
+resource_name = "reload"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6mmgx"]
+_data = {
+&"reload": SubResource("Animation_qfybe")
+}
 
 [node name="SMGWeapon" unique_id=338493741 instance=ExtResource("1_6u51o")]
-weapon_fire_rate = 10.0
-weapon_ammo_capacity = 30
+script = ExtResource("2_qfybe")
 
-[node name="Sprite" parent="." index="0" unique_id=2146215455]
-texture = ExtResource("2_5n1qh")
-region_rect = Rect2(8, 12, 17, 12)
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=479095335]
+position = Vector2(17, 1)
+sprite_frames = SubResource("SpriteFrames_838ej")
 
 [node name="MuzzleMarker" parent="." index="2" unique_id=517515705]
 position = Vector2(26, 0)
@@ -17,3 +36,6 @@ position = Vector2(26, 0)
 [node name="ReloadEmitter" parent="." index="5" unique_id=201661888]
 event_name = "event:/Rifle Reload"
 event_guid = "{df231a0d-f08a-45bd-9735-ff54b527f4c5}"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="7" unique_id=526686742]
+libraries/ = SubResource("AnimationLibrary_6mmgx")
