@@ -15,7 +15,6 @@
 [ext_resource type="Texture2D" uid="uid://dhb4ei7t5023j" path="res://assets/sprites_real/weapons/reload anims/revolver/frame0010.png" id="14_5ju3m"]
 [ext_resource type="Texture2D" uid="uid://wa52dimwad1l" path="res://assets/sprites_real/weapons/reload anims/revolver/frame0011.png" id="15_vdrqo"]
 [ext_resource type="Texture2D" uid="uid://ceqt8ihp8ngej" path="res://assets/sprites_real/weapons/reload anims/revolver/frame0012.png" id="16_0f0rw"]
-[ext_resource type="Script" uid="uid://b2rpirv6f66yh" path="res://scenes/entities/weapons/revolver_animations.gd" id="17_f0fqy"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_44mcf"]
 animations = [{
@@ -72,7 +71,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../AnimatedSprite2D:rotation")
+tracks/0/path = NodePath("AnimatedSprite2D:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -84,7 +83,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../AnimatedSprite2D:position")
+tracks/1/path = NodePath("AnimatedSprite2D:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -100,7 +99,7 @@ length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../AnimatedSprite2D:rotation")
+tracks/0/path = NodePath("AnimatedSprite2D:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -112,7 +111,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../AnimatedSprite2D:position")
+tracks/1/path = NodePath("AnimatedSprite2D:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -128,7 +127,7 @@ length = 1.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../AnimatedSprite2D:animation")
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -140,7 +139,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../AnimatedSprite2D:rotation")
+tracks/1/path = NodePath("AnimatedSprite2D:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -152,7 +151,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../AnimatedSprite2D:position")
+tracks/2/path = NodePath("AnimatedSprite2D:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -164,7 +163,7 @@ tracks/2/keys = {
 tracks/3/type = "method"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("../AnimatedSprite2D")
+tracks/3/path = NodePath("AnimatedSprite2D")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -200,10 +199,5 @@ position = Vector2(17, -2)
 sprite_frames = SubResource("SpriteFrames_44mcf")
 animation = &"reload"
 
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="." index="2" unique_id=1224209926]
-root_node = NodePath("../AnimationPlayer")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="7" unique_id=1224209926]
 libraries/ = SubResource("AnimationLibrary_xd2ie")
-script = ExtResource("17_f0fqy")
-
-[node name="AnimationPlayer" parent="." index="8" unique_id=2019799943]
-speed_scale = 0.5

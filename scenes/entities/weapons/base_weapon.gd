@@ -2,6 +2,7 @@ class_name Weapon
 extends Node2D
 
 signal ammo_changed(ammo: int)
+signal reload_started()
 
 enum FireType {
 	FULL_AUTO = 1,
@@ -28,12 +29,16 @@ var current_ammo: int:
 		ammo_changed.emit(current_ammo)
 		if shoot_emitter:
 			shoot_emitter.set_parameter("Gun shot variants", current_ammo)
-var reload_tween: Tween
 var equipped: bool = false:
 	set(value):
 		equipped = value
 		visible = equipped
 		set_process(equipped)
+var reloading: bool = false:
+	set(value):
+		if not reloading and value:
+			reload_started.emit()
+		reloading = value
 
 @onready var shoot_emitter: FmodEventEmitter2D = $ShootEmitter
 @onready var reload_emitter: FmodEventEmitter2D = $ReloadEmitter
@@ -41,9 +46,6 @@ var equipped: bool = false:
 @onready var fire_rate_timer: Timer = $FireRateTimer
 @onready var sprite: Sprite2D = $Sprite
 @onready var muzzle_marker: Marker2D = $MuzzleMarker
-
-@onready var animatedsprite: AnimatedSprite2D = $AnimatedSprite2D
-#@onready var revolveranimsprite: AnimatedSprite2D = $AnimatedSprite2D2
 
 func _ready() -> void:
 	fire_rate_timer.wait_time = 1 / weapon_fire_rate
@@ -58,7 +60,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if not equipped:
 		return
 	
-	if event.is_action_pressed("reload") and (not reload_tween or not reload_tween.is_running()):
+	if event.is_action_pressed("reload") and not reloading:
 		reload()
 
 func _handle_fire_input() -> void:
@@ -72,18 +74,18 @@ func _handle_fire_input() -> void:
 		if weapon_fire_type == FireType.SEMI_AUTO and Input.is_action_just_pressed("fire"):
 			fire()
 
-func _point_to_cursor() -> void:
+func _point_to_cursor(additional_nodes: Array[Node2D] = []) -> void:
 	var to: Vector2 = get_global_mouse_position()
 	rotation = (to - global_position).angle()
-	if abs(rotation) > PI / 2:
-		
-		sprite.flip_v = true
-		animatedsprite.flip_v = true
-		
-	else:
-		sprite.flip_v = false
-		animatedsprite.flip_v = false
-		
+	
+	var rotating_nodes: Array[Node2D] = [sprite]
+	rotating_nodes.append_array(additional_nodes)
+	
+	for node in rotating_nodes:
+		if abs(rotation) > PI / 2:
+			node.flip_v = true
+		else:
+			node.flip_v = false
 
 func fire() -> void:
 	if not fire_rate_timer.is_stopped():
@@ -102,13 +104,13 @@ func fire() -> void:
 	fire_rate_timer.start()
 
 func reload() -> void:
+	if reloading:
+		return
+	
 	# Play sound
 	reload_emitter.play_one_shot()
 	
-	# Tween animationsar
-	if reload_tween:
-		reload_tween.kill()
-	reload_tween = create_tween()
-	sprite.rotation = 0
-	#reload_tween.tween_property(sprite, "rotation", 3*TAU, weapon_reload_time)
-	reload_tween.tween_callback(func(): current_ammo = weapon_ammo_capacity)
+	reloading = true
+	await get_tree().create_timer(weapon_reload_time).timeout
+	current_ammo = weapon_ammo_capacity
+	reloading = false
