@@ -1,146 +1,15 @@
-[gd_scene format=3 uid="uid://cypm2bkcslxmy"]
+[gd_scene format=3 uid="uid://43qjwrvv6kc0"]
 
-[ext_resource type="PackedScene" uid="uid://lkg322v6uvt5" path="res://scenes/entities/weapons/base_weapon.tscn" id="1_464or"]
-[ext_resource type="Texture2D" uid="uid://hwmp85ogs7m4" path="res://assets/sprites_real/weapons/revolver_V2.png" id="2_jtsym"]
+[ext_resource type="PackedScene" uid="uid://c7f6cqi8nyr63" path="res://scenes/entities/weapons/revolver_weapon.tscn" id="1_464or"]
 [ext_resource type="Script" uid="uid://bij5jdfpg5g3g" path="res://scenes/entities/weapons/big_revolver.gd" id="2_xvdeo"]
-[ext_resource type="SpriteFrames" uid="uid://b3yktd7wnv245" path="res://resources/sprite_frames/revolver_reload_sprite_frames.tres" id="4_xvdeo"]
-
-[sub_resource type="Animation" id="Animation_fx7a0"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(17, -2)]
-}
-
-[sub_resource type="Animation" id="Animation_ghj13"]
-resource_name = "fire"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.033333335, 0.1, 0.3),
-"transitions": PackedFloat32Array(0.32987702, 1.2311447, 2.0000005),
-"update": 0,
-"values": [0.0, -0.5515240436302086, 0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.033333335, 0.13333334, 0.3),
-"transitions": PackedFloat32Array(1, 0.2588163, 1, 1),
-"update": 0,
-"values": [Vector2(17, -2), Vector2(17, -2), Vector2(15, -5), Vector2(17, -2)]
-}
-
-[sub_resource type="Animation" id="Animation_pejhe"]
-resource_name = "reload"
-length = 1.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [&"reload", &"reload"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.033333335, 0.1, 0.36666667, 0.53333336, 0.8333333, 1, 1.1, 1.2),
-"transitions": PackedFloat32Array(1, 2.2973974, 1, 1, 0.3186405, 1, 0.35355338, 2.6390157, 1),
-"update": 0,
-"values": [0.0, -0.4415683007545656, 0.0, -5.40179403492245, -5.843362335677016, -5.8433623, -5.403539364174445, -6.757914863722044, -6.2831855]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("AnimatedSprite2D:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.06666667, 0.26666668, 0.5, 1, 1.1666666),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(17, -2), Vector2(17, -1), Vector2(17, -3), Vector2(17, 0), Vector2(17, 0), Vector2(17, -2)]
-}
-tracks/3/type = "method"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("AnimatedSprite2D")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [&"", 1.0, false],
-"method": &"play"
-}]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_xvdeo"]
-_data = {
-&"RESET": SubResource("Animation_fx7a0"),
-&"fire": SubResource("Animation_ghj13"),
-&"reload": SubResource("Animation_pejhe")
-}
 
 [node name="BigRevolver" unique_id=338493741 instance=ExtResource("1_464or")]
 script = ExtResource("2_xvdeo")
 knockback_velocity = 1000.0
-weapon_damage = 100
-weapon_fire_type = 3
-
-[node name="Sprite" parent="." index="0" unique_id=2146215455]
-scale = Vector2(4, 4)
-texture = ExtResource("2_jtsym")
-offset = Vector2(1.25, 2.5)
-region_enabled = true
-region_rect = Rect2(9, 13, 15, 11)
+weapon_damage = 1
+weapon_fire_rate = 1.0
+weapon_reload_time = 1.0
+weapon_fire_type = 1
 
 [node name="AnimatedSprite2D" parent="." index="1" unique_id=479095335]
-position = Vector2(17, -2)
-sprite_frames = ExtResource("4_xvdeo")
-animation = &"reload"
-
-[node name="MuzzleMarker" parent="." index="2" unique_id=517515705]
-position = Vector2(51, -2)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="7" unique_id=204501267]
-libraries/ = SubResource("AnimationLibrary_xvdeo")
+scale = Vector2(3, 3)
