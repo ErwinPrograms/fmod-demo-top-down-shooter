@@ -70,7 +70,8 @@ script = ExtResource("1_inxs3")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=2146215455]
 position = Vector2(17, 1)
-offset = Vector2(3, 0)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=479095335]
 
 [node name="MuzzleMarker" type="Marker2D" parent="." unique_id=517515705]
 position = Vector2(25, -3)

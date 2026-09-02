@@ -1,8 +1,187 @@
 [gd_scene format=3 uid="uid://c7f6cqi8nyr63"]
 
 [ext_resource type="PackedScene" uid="uid://lkg322v6uvt5" path="res://scenes/entities/weapons/base_weapon.tscn" id="1_s1brf"]
-[ext_resource type="Texture2D" uid="uid://hwmp85ogs7m4" path="res://assets/sprites_real/weapons/revolver_V2.png" id="2_cqcq8"]
 [ext_resource type="Script" uid="uid://lnx0rymo7yj3" path="res://scenes/entities/weapons/revolver_weapon.gd" id="2_pqevr"]
+[ext_resource type="Texture2D" uid="uid://dhte6e8fu3maa" path="res://assets/sprites_real/weapons/reload anims/revolver/frame0000.png" id="4_44mcf"]
+[ext_resource type="Texture2D" uid="uid://cmht6di755vib" path="res://assets/sprites_real/weapons/reload anims/revolver/frame0001.png" id="5_f0fqy"]
+[ext_resource type="Texture2D" uid="uid://ksrbi5lpgj4p" path="res://assets/sprites_real/weapons/reload anims/revolver/frame0002.png" id="6_fx7a0"]
+[ext_resource type="Texture2D" uid="uid://cyl0bjemahitj" path="res://assets/sprites_real/weapons/reload anims/revolver/frame0003.png" id="7_ghj13"]
+[ext_resource type="Texture2D" uid="uid://bwc48yofr8nlg" path="res://assets/sprites_real/weapons/reload anims/revolver/frame0004.png" id="8_pejhe"]
+[ext_resource type="Texture2D" uid="uid://dqt2dbib0snn8" path="res://assets/sprites_real/weapons/reload anims/revolver/frame0005.png" id="9_xd2ie"]
+[ext_resource type="Texture2D" uid="uid://bt2i4ltqi1cja" path="res://assets/sprites_real/weapons/reload anims/revolver/frame0006.png" id="10_qy5nj"]
+[ext_resource type="Texture2D" uid="uid://bgeajqrhun6yw" path="res://assets/sprites_real/weapons/reload anims/revolver/frame0007.png" id="11_2obvp"]
+[ext_resource type="Texture2D" uid="uid://bmwxu5xptdpo3" path="res://assets/sprites_real/weapons/reload anims/revolver/frame0008.png" id="12_esrna"]
+[ext_resource type="Texture2D" uid="uid://d4bg2fclp7jqp" path="res://assets/sprites_real/weapons/reload anims/revolver/frame0009.png" id="13_i0rts"]
+[ext_resource type="Texture2D" uid="uid://dhb4ei7t5023j" path="res://assets/sprites_real/weapons/reload anims/revolver/frame0010.png" id="14_5ju3m"]
+[ext_resource type="Texture2D" uid="uid://wa52dimwad1l" path="res://assets/sprites_real/weapons/reload anims/revolver/frame0011.png" id="15_vdrqo"]
+[ext_resource type="Texture2D" uid="uid://ceqt8ihp8ngej" path="res://assets/sprites_real/weapons/reload anims/revolver/frame0012.png" id="16_0f0rw"]
+[ext_resource type="Script" uid="uid://b2rpirv6f66yh" path="res://scenes/entities/weapons/revolver_animations.gd" id="17_f0fqy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_44mcf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_44mcf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_f0fqy")
+}, {
+"duration": 4.5,
+"texture": ExtResource("11_2obvp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_fx7a0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ghj13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_pejhe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_xd2ie")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_qy5nj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_esrna")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_i0rts")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_5ju3m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_vdrqo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_0f0rw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_44mcf")
+}],
+"loop": 0,
+"name": &"reload",
+"speed": 10.0
+}]
+
+[sub_resource type="Animation" id="Animation_fx7a0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AnimatedSprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../AnimatedSprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(17, -2)]
+}
+
+[sub_resource type="Animation" id="Animation_ghj13"]
+resource_name = "fire"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AnimatedSprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 0.1, 0.3),
+"transitions": PackedFloat32Array(0.32987702, 1.2311447, 2.0000005),
+"update": 0,
+"values": [0.0, -0.5515240436302086, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../AnimatedSprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.13333334, 0.3),
+"transitions": PackedFloat32Array(1, 0.2588163, 1, 1),
+"update": 0,
+"values": [Vector2(17, -2), Vector2(17, -2), Vector2(15, -5), Vector2(17, -2)]
+}
+
+[sub_resource type="Animation" id="Animation_pejhe"]
+resource_name = "reload"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"reload", &"reload"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../AnimatedSprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.1, 0.36666667, 0.53333336, 0.8333333, 1, 1.1, 1.2),
+"transitions": PackedFloat32Array(1, 2.2973974, 1, 1, 0.3186405, 1, 0.35355338, 2.6390157, 1),
+"update": 0,
+"values": [0.0, -0.4415683007545656, 0.0, -5.40179403492245, -5.843362335677016, -5.8433623, -5.403539364174445, -6.757914863722044, -6.2831855]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../AnimatedSprite2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.26666668, 0.5, 1, 1.1666666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(17, -2), Vector2(17, -1), Vector2(17, -3), Vector2(17, 0), Vector2(17, 0), Vector2(17, -2)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../AnimatedSprite2D")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"", 1.0, false],
+"method": &"play"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xd2ie"]
+_data = {
+&"RESET": SubResource("Animation_fx7a0"),
+&"fire": SubResource("Animation_ghj13"),
+&"reload": SubResource("Animation_pejhe")
+}
 
 [node name="RevolverWeapon" unique_id=338493741 instance=ExtResource("1_s1brf")]
 script = ExtResource("2_pqevr")
@@ -12,7 +191,19 @@ weapon_reload_time = 0.81
 weapon_fire_type = 3
 
 [node name="Sprite" parent="." index="0" unique_id=2146215455]
-texture = ExtResource("2_cqcq8")
 offset = Vector2(1, -1)
 region_enabled = true
 region_rect = Rect2(9, 13, 15, 11)
+
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=479095335]
+position = Vector2(17, -2)
+sprite_frames = SubResource("SpriteFrames_44mcf")
+animation = &"reload"
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="." index="2" unique_id=1224209926]
+root_node = NodePath("../AnimationPlayer")
+libraries/ = SubResource("AnimationLibrary_xd2ie")
+script = ExtResource("17_f0fqy")
+
+[node name="AnimationPlayer" parent="." index="8" unique_id=2019799943]
+speed_scale = 0.5

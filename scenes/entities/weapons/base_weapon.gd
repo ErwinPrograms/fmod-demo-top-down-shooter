@@ -42,6 +42,9 @@ var equipped: bool = false:
 @onready var sprite: Sprite2D = $Sprite
 @onready var muzzle_marker: Marker2D = $MuzzleMarker
 
+@onready var animatedsprite: AnimatedSprite2D = $AnimatedSprite2D
+#@onready var revolveranimsprite: AnimatedSprite2D = $AnimatedSprite2D2
+
 func _ready() -> void:
 	fire_rate_timer.wait_time = 1 / weapon_fire_rate
 	current_ammo = weapon_ammo_capacity
@@ -73,9 +76,14 @@ func _point_to_cursor() -> void:
 	var to: Vector2 = get_global_mouse_position()
 	rotation = (to - global_position).angle()
 	if abs(rotation) > PI / 2:
+		
 		sprite.flip_v = true
+		animatedsprite.flip_v = true
+		
 	else:
 		sprite.flip_v = false
+		animatedsprite.flip_v = false
+		
 
 func fire() -> void:
 	if not fire_rate_timer.is_stopped():
@@ -90,6 +98,7 @@ func fire() -> void:
 	
 	current_ammo -= 1
 	shoot_emitter.play_one_shot()
+	
 	fire_rate_timer.start()
 
 func reload() -> void:
@@ -101,5 +110,5 @@ func reload() -> void:
 		reload_tween.kill()
 	reload_tween = create_tween()
 	sprite.rotation = 0
-	reload_tween.tween_property(sprite, "rotation", 3*TAU, weapon_reload_time)
+	#reload_tween.tween_property(sprite, "rotation", 3*TAU, weapon_reload_time)
 	reload_tween.tween_callback(func(): current_ammo = weapon_ammo_capacity)
